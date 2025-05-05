@@ -3,6 +3,7 @@ import InterestForm from './InterestForm';
 import f4 from './asset/f4.jpg';
 import f2 from './asset/f2.jpg';
 import f6 from './asset/f6.png';
+import f5 from './asset/f5.jpg';
 import './ProductDetails.css';
 
 function ProductDetails() {
@@ -37,11 +38,23 @@ function ProductDetails() {
     // More products...
   ];
 
+  const extendedProducts = [
+    ...products,
+    {
+      id: 4,
+      name: "Elegant Wooden Shelf",
+      description: "Elegant wooden shelf with modern design, perfect for your living room.",
+      location: "Mbeya, Tanzania",
+      image: f5,
+      label: "wooden design"
+    }
+  ];
+
   return (
     <div style={{ padding: '40px 20px', maxWidth: '1200px', margin: '0 auto', fontFamily: 'Arial, sans-serif' }}>
       <h2 style={{ textAlign: 'center', marginBottom: '40px', fontSize: '28px', fontWeight: 'bold' }}>Our Products</h2>
       <div className="grid-container">
-        {products.map(product => (
+        {extendedProducts.map(product => (
           <div key={product.id} className="card">
             <img src={product.image} alt={product.name} style={{ width: '100%', height: 'auto', maxHeight: '150px', objectFit: 'cover', display: 'block' }} />
             <div style={{ padding: '10px 15px' }}>
